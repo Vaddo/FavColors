@@ -17,11 +17,11 @@ A little helper tool for Webdesigners. It visualize, group and sort your favouri
 
 - Add hex color codes seperated by space
 
-> **HINT**: Colors sorted by their contrasts. If you need a sorting by colors, please create groups.
+> **HINT**: Colors are sorted by their contrasts. If you need a sorting by colors, please create groups.
 
 *Example* 
 ```html
 <div data-title="red">#FD6D52 #E9573E</div>
 ````
 
-**3)** Upload the unzipped files plus your modified `index.html' file on your server.
+**3)** Upload the unzipped files plus your modified `index.html` file on your server.
