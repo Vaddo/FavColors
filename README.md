@@ -13,7 +13,7 @@ A little helper tool for Webdesigners. It visualize, group and sort your favouri
 
 **2)** Add your favourite colors by modifying the content of the `index.html` file
 
-- Set the `data-title` attribute for the title
+- Set the `data-title` attribute for a title
 
 - Add hex color codes seperated by space
 
