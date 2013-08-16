@@ -13,9 +13,11 @@ A little helper tool for Webdesigners. It visualize, group and sort your favouri
 
 **2)** Add your favourite colors by modifying the content of the `index.html` file
 
-> Set the `data-title` attribute for the title
+- Set the `data-title` attribute for the title
 
-> Add hex color codes seperated by space
+- Add hex color codes seperated by space
+
+> **HINT**: Colors sorted by their contrasts. If you need a sorting by colors, please create groups.
 
 *Example* 
 ```html
