@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>FavColors</title>
+        <meta name="description" content="A smart color collection tool by Vadim Hermann">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="css/screen.css">
+    </head>
+    <body>
+
+        <div class="page">
+            <h1>FavColors <span class="version">v.0.1.0</span></h1>
+            <h3>A smart color collection tool by Vadim Hermann</h3>
+
+            <div data-title="red">#FD6D52 #E9573E #DA3610 #E74C3C #C0392B</div>
+            <div data-title="orange">#FBC852 #F27935 #FFAB00 #FF702A #E67E22 #F39C12 #D35400</div>
+            <div data-title="yellow">#F1C40F #FAF7E8</div>
+            <div data-title="green">#A0D468 #8DC153 #9BB465 #1FBBA6 #8DCA35 #1ABC9C #2ECC71 #16A085 #27AE60 #EDE96C</div>
+            <div data-title="blue">#323A45 #50C0E8 #3BAEDA #01A3B2 #00AFD1 #1D3037 #00BFDD #3498DB #34495E #2980B9 #2C3E50</div>
+            <div data-title="purple">#9579DE #9B59B6</div>
+            <div data-title="gray">#434A54 #E5E8ED #4F5055 #9EA7B3 #EAEDF1 #222222 #ECF0F1 #95A5A6 #BDC3C7 #7F8C8D</div>
+        </div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script src="js/main.js"></script>
+        <script type="text/javascript" src="f5less.js"></script>
+        <script type="text/javascript">
+            f5less.connect({
+                triggersCSSReload: function(filename) {
+                    return f5less.strEndsWith(filename, 
+                        ".css", ".png", ".jpg", ".scss"
+                    );
+                },
+
+                triggersPageReload: function(filename) {
+                    return f5less.strEndsWith(filename, 
+                        ".js", ".html", ".htm", ".php", ".md"
+                    );
+                }
+            });
+        </script>
+    </body>
+</html>
