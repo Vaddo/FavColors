@@ -8,9 +8,16 @@ A smart color collection tool by Vadim Hermann
 A little helper tool for Webdesigners. It visualize, groups and sorts your favourite colors and helps you to pick them quicker up.
 Check out the [demo](http://vaddo.github.io/FavColors).
 
-> **HINT**: Browser Flash plugin is required.
+> **HINT**: Browser Flash plugin is required for *copy to clipboard*.
+
 
 ## How it works?
+
+Use my [color palette](http://vaddo.github.io/FavColors) or create your own.
+
+
+## How can i create my own color palette?
+
 **1)** Download and unzip the skel.zip.
 
 **2)** Add your favourite colors by modifying the content of the `index.html` file.
