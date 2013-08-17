@@ -13,7 +13,7 @@ $(function(){
       hex = colorArray[index].trim();
 
       if(hex.length > 0){
-        markup += '<li><span>' + hex + '</span></li>';
+        markup += '<li title="Click to copy that color" data-clipboard-target="' + hex + '"><span id="' + hex + '">' + hex + '</span></li>';
       }
     }
 
@@ -50,12 +50,20 @@ $(function(){
   });
 
 
-
-  // copy color to clipboard
-  $(".color-list").on("click", "li", function(index, el){
-    
+  // copy to clipboard
+  var items = $(".color-list").find("li");
+  var clip = new ZeroClipboard( items, {
+    moviePath: "ZeroClipboard.swf"
   });
 
+  // copy feedback
+  clip.on( 'complete', function(client, args) {
+    var me = $(this);
+    me.addClass("copied");
+    setTimeout(function(){
+      me.removeClass("copied")
+    }, 200);
+  });
 
   // helpers
   function sortColors(a, b){

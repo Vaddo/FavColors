@@ -6,8 +6,9 @@ A smart color collection tool by Vadim Hermann
 
 ## What is FavColors?
 A little helper tool for Webdesigners. It visualize, groups and sorts your favourite colors and helps you to pick them quicker up.
-Check out the [demo](http://vaddo.github.io/FavColors)
+Check out the [demo](http://vaddo.github.io/FavColors).
 
+> **HINT**: Browser Flash plugin is required.
 
 ## How it works?
 **1)** Download and unzip the skel.zip.
