@@ -18,7 +18,7 @@ Use my [color palette](http://vaddo.github.io/FavColors) or create your own.
 
 ## How can i create my own color palette?
 
-**1)** Download and unzip the skel.zip.
+**1)** Download and unzip the `FavColors.zip`.
 
 **2)** Add your favourite colors by modifying the content of the `index.html` file.
 
