@@ -33,7 +33,7 @@ $(function(){
     me.css("backgroundColor", bgColor);
 
     // if background color is to dark, plz use white as foreground color
-    if(colorSum <= 300){
+    if(colorSum <= 340){
       me.css("color", "#fff");
     }
   });
