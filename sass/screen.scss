@@ -30,14 +30,6 @@ $radius:3px;
   position:absolute;
   @include position($args);
 }
-@mixin fixed($args){
-  position:fixed;
-  @include position($args);
-}
-@mixin relative($args){
-  position:relative;
-  @include position($args);
-}
 
 //------------------------------------------------------------------styles
 *{@include box-sizing(border-box);}
@@ -62,10 +54,6 @@ h1{
   text-align:center;
   margin-top: $space*4;
 }
-h2{
-  margin-top: $space*4;
-  margin-bottom: $space;
-}
 h3{
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-align:center;
@@ -79,35 +67,27 @@ hr{
   border:none;
   border-bottom:solid 5px rgba(0,0,0,.1);
 }
-
+#colorCount{
+  @include absolute($space '' '' $space);
+}
 .page{
-  max-width: 960px;
+  max-width: 900px;
   margin:auto;
   @include absolute(0 0 0 0);
 }
 .version{font-size:16px;}
-.color-list{
-  li{
-    display: inline-block;
-    width: 100px;
-    height: 100px;
-    line-height: 100px;
-    margin-top: $space*2;
-    margin-right: $space*2;
-    text-align: center;
-    border:solid 4px white;
-    cursor:pointer;
-
-    &:nth-child(7n){
-      margin-right:0px;
-    }
-  }
-  span{
-    display: block;
-    @include transition(all .2s ease-in-out);
-  }
+ul{margin:$space*3 0;}
+li{
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  cursor:pointer;
+  font-family: "Calluna Sans", "Gill Sans", Calibri, "Trebuchet MS", sans-serif;
 }
-.copied{
-  span{@include scale(1.5);}
+span{
+  display: block;
+  @include transition(all .2s ease-in-out);
 }
-.zeroclipboard-is-hover{border:solid 4px #323A45 !important;}
+.copied span{@include scale(1.5);}
