@@ -47,7 +47,10 @@ html, body{
 }
 ul, ol{list-style:none;}
 hr, h1, h2, h3, ul, ol, li{margin:0;padding:0;}
-a{text-decoration:none;}
+a{
+  color:#00bfdd;
+  text-decoration:none;
+}
 p{margin:0;}
 h1{
   font-size: $fontSize + 2;
@@ -70,24 +73,45 @@ hr{
 #colorCount{
   @include absolute($space '' '' $space);
 }
-.page{
-  max-width: 900px;
-  margin:auto;
-  @include absolute(0 0 0 0);
-}
 .version{font-size:16px;}
-ul{margin:$space*3 0;}
-li{
-  display: inline-block;
-  width: 100px;
-  height: 100px;
-  line-height: 100px;
+.radioList{
   text-align: center;
-  cursor:pointer;
-  font-family: "Calluna Sans", "Gill Sans", Calibri, "Trebuchet MS", sans-serif;
+  margin-top:$space*2;
+  li{
+    display:inline;
+    margin-right:$space;
+    color:gray;
+    font-style: italic;
+    font-family: "Calluna Sans", "Gill Sans", Calibri, "Trebuchet MS", sans-serif;
+  }
 }
-span{
-  display: block;
-  @include transition(all .2s ease-in-out);
+.colorList{
+  margin:$space*3 0;
+  padding:0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  justify-content: center;
+
+  li{
+    display: inline-block;
+    width: 200px;
+    height: 150px;
+    line-height: 100px;
+    text-align: center;
+    cursor:pointer;
+    font-family: "Calluna Sans", "Gill Sans", Calibri, "Trebuchet MS", sans-serif;
+
+    span{
+      display: block;
+      font-size: $fontSize + .2;
+      opacity: .6;
+      margin-top:1em;
+      @include transition(all .2s ease-in-out);
+    }
+  }
 }
-.copied span{@include scale(1.5);}
+.copied span{@include scale(2);}

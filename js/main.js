@@ -73,37 +73,44 @@ $(function(){
   function sortHSLArray(hslArray){
     var hslSortedArr = new Array();
     var len          = hslArray.length;
-    var sortedLen    = hslSortedArr.length;
+    var sortedLen    = 0;
 
     outerloop:
-    for(var i=0; i<len ; ++i){
+    for(var i = 0; i < len; ++i){
+        sortedLen = hslSortedArr.length
+
         for(var j = 0; j < sortedLen; ++j){
-            if(hslSortedArr[j][0][0] > hslArr[i][0][0]){
+            if(hslSortedArr[j][0][0] < hslArr[i][0][0]){
                 hslSortedArr.splice(j,0,hslArr[i]);
                 continue outerloop;
             }
         }
         hslSortedArr.push(hslArr[i]);
     }
-    
+
     return hslSortedArr;
   }
   function createMarkup(rgbArr){
-    var markup = "<ul>";
-    var len    = sortedRgbArr.length;
+    var markup = '<ul id="colorList" class="colorList">';
+    var len    = rgbArr.length;
     var r,g,b, color, hex;
 
     $("#colorCount").text(len + " colors");
 
     for(var i = 0; i < len; ++i){
-      r = sortedRgbArr[i][0];
-      g = sortedRgbArr[i][1];
-      b = sortedRgbArr[i][2];
+      r = rgbArr[i][0];
+      g = rgbArr[i][1];
+      b = rgbArr[i][2];
 
+      // Light font color, if background color is dark
       color = ((r + g + b) <= 340) ? 'style="color:#fff;"' : "";
       hex = rgbToHex(r,g,b);
 
-      markup += '<li title="Click to copy that color" data-clipboard-target="' + hex + '" style="background-color:' + hex + '">' + 
+      markup += '<li title="Click to copy that color" ' +
+                    'data-rgb="rgb(' + r + ',' + g + ',' + b + ')" ' +
+                    'data-rgba="rgba(' + r + ',' + g + ',' + b + ',1)" ' +
+                    'data-hex="' + hex + '"' +
+                    'data-clipboard-target="' + hex + '" style="background-color:' + hex + '">' + 
                   '<span id="' + hex + '" ' + color + '>' + 
                     hex + 
                   '</span>' +
@@ -114,10 +121,13 @@ $(function(){
     return markup;
   }
 
+  // Get all hex codes
   var hexCodes     = $("#colors").text().split(" ");
   var rgbArr       = createRGBArray(hexCodes);
   var hslArr       = createHSLArray(rgbArr);
+  // Sort colors
   var sortedHslArr = sortHSLArray(hslArr);
+  // Sorted rgb values
   var sortedRgbArr = hslArrayToRgbArray(sortedHslArr, rgbArr);
 
   $("#colors").html(createMarkup(sortedRgbArr));
@@ -131,9 +141,20 @@ $(function(){
   // copy feedback
   clip.on( 'complete', function(client, args) {
     var me = $(this);
+
     me.addClass("copied");
     setTimeout(function(){
       me.removeClass("copied")
     }, 200);
+  });
+
+  $("#radioList").on("change", "input", function(){
+    var data = "data-" + $(this).siblings("label").text().toLowerCase();
+
+    $.each($("#colorList li"), function(i, e){
+      var item = $(e);
+
+      item.find("span").text(item.attr(data))
+    });
   });
 });
