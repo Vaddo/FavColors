@@ -23,6 +23,7 @@ Use my [color palette](http://vaddo.github.io/FavColors) or create your own.
 **2)** Add your favourite colors by modifying the content of the `index.html` file.
 
 - Add hex color codes seperated by space
+- Colors are sorted by spectrum
 
 *Example* 
 ```html
